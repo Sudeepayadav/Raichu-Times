@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 function ShortNews() {
   const images = [
@@ -63,21 +62,11 @@ function ShortNews() {
   const displayedImages = images.slice(currentIndex, currentIndex + 6);
 
   return (
-    <div
-      className="w-11/12 m-auto space-y-4 mb-9 z-1"
-    >
+    <div className="w-11/12 m-auto space-y-4 mb-9 z-1">
       <div>
         <h1 className="text-3xl font-bold my-7">Short News</h1>
       </div>
       <div className=" flex space-x-4 overflow-x-auto">
-        {currentIndex > 0 && (
-          <div
-            onClick={handlePrev}
-            className=" left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 flex items-center justify-center h-10 w-10 rounded-full cursor-pointer z-10"
-          >
-            <FaAngleLeft />
-          </div>
-        )}
         {displayedImages.map((image, index) => (
           <div key={index}>
             <a href={image.href}>
@@ -89,14 +78,6 @@ function ShortNews() {
             </a>
           </div>
         ))}
-        {currentIndex + 6 < images.length && (
-          <div
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 flex items-center justify-center h-10 w-10 rounded-full cursor-pointer z-10"
-          >
-            <FaAngleRight />
-          </div>
-        )}
       </div>
     </div>
   );

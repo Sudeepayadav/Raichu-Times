@@ -18,7 +18,7 @@ const Header = () => {
             <div className="relative group">
               <button
                 type="button"
-                className="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
+                className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
               >
                 ಸಂಕ್ಷಿಪ್ತ{" "}
               </button>
