@@ -85,28 +85,28 @@ function TopNews() {
         <h1 className="text-3xl font-bold">Top News</h1>
         <div className="-z-50 ">
           <Slider {...settings}>
-          {carouselsData.map((carouselsData) => (
-            <>
-              <div className="mt-4 my-3 p-3 space-x-4 m-auto ml-6 md:ml-0">
-                <div className="card bg-base-100 w-80">
-                  <figure>
-                    <img
-                      src={carouselsData.image}
-                      // alt={item.name}
-                      // className="w-[400px] rounded "
-                      className="w-[400px] rounded hover:scale-105 duration-200"
-                    />
-                  </figure>
-                  <div className="card-body w-fit m-auto mt-2">
-                    <p>{carouselsData.category}</p>
-                    <h2 className="card-title md:text-lg text-sm font-bold">
-                      {carouselsData.title}
-                    </h2>
+            {carouselsData.map((carouselsData) => (
+              <>
+                <div className="mt-4 my-3 p-3 space-x-4 m-auto ml-6 md:ml-0">
+                  <div className="card bg-base-100 w-80">
+                    <figure>
+                      <img
+                        src={carouselsData.image}
+                        // alt={item.name}
+                        // className="w-[400px] rounded "
+                        className="w-[400px] rounded hover:scale-105 duration-200"
+                      />
+                    </figure>
+                    <div className="card-body w-fit m-auto mt-2">
+                      <p>{carouselsData.category}</p>
+                      <h2 className="card-title md:text-lg text-sm font-bold">
+                        {carouselsData.title}
+                      </h2>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </>
-          ))}
+              </>
+            ))}
           </Slider>
         </div>
       </div>

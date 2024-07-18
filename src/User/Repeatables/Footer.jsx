@@ -4,7 +4,7 @@ import Raichur from "/Raichur-Time-Kannada.png";
 import { FaRegCopyright } from "react-icons/fa";
 
 function Footer() {
-  return  (
+  return (
     <>
       <div>
         <hr />
@@ -17,25 +17,43 @@ function Footer() {
               <div className="w-full sm:w-1/2 lg:w-auto text-center lg:text-left">
                 <h1 className="text-base font-bold">Entertainment</h1>
                 <div className="mt-2 space-y-1.5">
-                  <a href="" className="block">News</a>
-                  <a href="" className="block">Movie Review</a>
-                  <a href="" className="block">Special</a>
+                  <a href="" className="block">
+                    News
+                  </a>
+                  <a href="" className="block">
+                    Movie Review
+                  </a>
+                  <a href="" className="block">
+                    Special
+                  </a>
                 </div>
               </div>
               <div className="w-full sm:w-1/2 lg:w-auto text-center lg:text-left">
                 <h1 className="text-base font-bold">Money</h1>
                 <div className="mt-2 space-y-1.5">
-                  <a href="" className="block">Business</a>
-                  <a href="" className="block">Economy</a>
-                  <a href="" className="block">Market</a>
+                  <a href="" className="block">
+                    Business
+                  </a>
+                  <a href="" className="block">
+                    Economy
+                  </a>
+                  <a href="" className="block">
+                    Market
+                  </a>
                 </div>
               </div>
               <div className="w-full sm:w-1/2 lg:w-auto text-center lg:text-left">
                 <h1 className="text-base font-bold">Sports</h1>
                 <div className="mt-2 space-y-1.5">
-                  <a href="" className="block">Cricket</a>
-                  <a href="" className="block">Football</a>
-                  <a href="" className="block">Special</a>
+                  <a href="" className="block">
+                    Cricket
+                  </a>
+                  <a href="" className="block">
+                    Football
+                  </a>
+                  <a href="" className="block">
+                    Special
+                  </a>
                 </div>
               </div>
               <div className="w-full sm:w-1/2 lg:w-auto text-center lg:text-left">

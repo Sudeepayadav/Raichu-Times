@@ -66,14 +66,14 @@ function ShortNews() {
       <div>
         <h1 className="text-3xl font-bold my-7">Short News</h1>
       </div>
-      <div className="flex flex-wrap md:flex-nowrap md:overflow-x-auto space-x-4">
+      <div className="flex flex-wrap md:flex-nowrap md:overflow-x-auto space-x-4 space-y-4">
         {displayedImages.map((image, index) => (
           <div key={index} className="flex-none w-full md:w-60">
             <a href={image.href}>
               <img
                 src={image.src}
                 alt={image.alt}
-                className="rounded-xl w-full h-60 md:h-80 object-cover"
+                className="rounded-xl w-full h-90 md:h-90 object-cover"
               />
             </a>
           </div>

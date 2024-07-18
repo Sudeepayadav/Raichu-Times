@@ -3,8 +3,9 @@ import { BsEnvelopeFill } from "react-icons/bs";
 
 function Inform() {
   return (
-    <div className="flex mt-10 border-t border-gray-600 pt-6"><hr />
-      <div className="w-[360px] ">
+    <div className="flex mt-10 border-t border-gray-600 pt-6">
+      <hr />
+      <div className="w-[360px] items-center flex">
         <a href="https://www.amazon.in/s?k=watches+for+men&crid=1A6RW0EHSBL98&sprefix=wat%2Caps%2C261&ref=nb_sb_ss_w_hit-vc-lth_watches-for-men_k0_1_3">
           <img
             className="w-60  mt-2"
@@ -24,7 +25,6 @@ function Inform() {
               </h1>
               <h1 className="font-semibold text-black">
                 <p>
-                  {" "}
                   ಭಾರತೀಯ ಸಂಘಟನೆಗಳು ಹಾಗೂ ಅನ್ಯ ಸಹಾಯ ಸಂಸ್ಥೆಗಳು ರಾಯಚೂರಿನ ಪ್ರದೇಶದಲ್ಲಿ
                   ಏಮ್ಸ್ ಶಿಬಿರ ಸ್ಥಾಪಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿವೆ. ಈ ಸಂಸ್ಥೆಯು ರೋಗಿಗಳಿಗೆ
                   ಅತ್ಯುತ್ತಮ ಚಿಕಿತ್ಸಾ ಸೌಲಭ್ಯವನ್ನು ಒದಗಿಸುವ ಉದ್ದೇಶದಿಂದ
@@ -41,7 +41,6 @@ function Inform() {
               </h1>
               <h1 className="font-semibold text-black">
                 <p>
-                  {" "}
                   ಕರಾವಳಿಯಲ್ಲಿ ಡೆಂಗ್ಯೂ ಮತ್ತು ವೈರಲ್ ಜ್ವರ ರೋಗಗಳ ಅಧ್ಯಯನ ಮತ್ತು ನಿಗದಿತ
                   ಸಾಂಕೇತಿಕತೆಗಳ ಬಗ್ಗೆ ಬಹಳಷ್ಟು ಪ್ರಮಾಣದ ಪರೀಕ್ಷೆಗಳು ನಡೆಯುತ್ತವೆ. ಇವು
                   ರೋಗದ ಹದವನ್ನು ಮೊದಲುಪಡಿಸುವಲ್ಲಿ ಹೆಚ್ಚಿನ ಸಾಮರ್ಥ್ಯವನ್ನು
@@ -101,9 +100,8 @@ function Inform() {
         </div>
       </div>
 
-      <div className="w-[360px]">
+      <div className="w-[360px] flex items-center">
         <a href="https://www.amazon.in/s?k=iphone&crid=2WD0LDP7CCV7S&sprefix=iphone%2Caps%2C272&ref=nb_sb_noss_1">
-          {" "}
           <img
             className="w-60 "
             src="https://img.freepik.com/premium-vector/new-headphone-sale-modern-brand-promotion_784890-2660.jpg?ga=GA1.1.630307654.1719551218&semt=ais_user"

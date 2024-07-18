@@ -1,32 +1,38 @@
-import React from 'react';
+import React from "react";
 
 // Define your data array containing image URLs, titles, and descriptions
 const items = [
   {
-    imageUrl: 'https://vijaykarnataka.com/thumb/111709025/radhika-ambani-was-eye-catching-in-the-lehanga-designed-by-manish-malhotra-111709025.jpg?imgsize=2787516&width=700&height=394&resizemode=75',
-    title: 'ರಾಧಿಕಾ ಮರ್ಚೆಂಟ್ ಗಾಗಿ ಮನೀಶ್ ಮಲ್ಹೋತ್ರ ತಯಾರಿಸಿದ ಲೆಹೆಂಗಾದಲ್ಲಿ ನಿಜವಾದ ಚಿನ್ನ ಸೇರಿಸಲಾಗಿತ್ತಂತೆ!',
-    description: 'Primary Industries'
+    imageUrl:
+      "https://vijaykarnataka.com/thumb/111709025/radhika-ambani-was-eye-catching-in-the-lehanga-designed-by-manish-malhotra-111709025.jpg?imgsize=2787516&width=700&height=394&resizemode=75",
+    title:
+      "ರಾಧಿಕಾ ಮರ್ಚೆಂಟ್ ಗಾಗಿ ಮನೀಶ್ ಮಲ್ಹೋತ್ರ ತಯಾರಿಸಿದ ಲೆಹೆಂಗಾದಲ್ಲಿ ನಿಜವಾದ ಚಿನ್ನ ಸೇರಿಸಲಾಗಿತ್ತಂತೆ!",
+    description: "Primary Industries",
   },
   {
-    imageUrl: 'https://vijaykarnataka.com/thumb/111744426/these-herbal-teas-are-meant-for-controlling-blood-sugar-levels-very-efficiently-111744426.jpg?imgsize=1540148&width=700&height=394&resizemode=75',
-    title: 'ಗಿಡಮೂಲಿಕೆಗಳಿಗೆ ಶುಗರ್ ಕಮ್ಮಿ ಮಾಡುವ ತಾಕತ್ತಿದೆ ಎಂದು ಇದಕ್ಕೆ ಹೇಳೋದು',
-    description: 'Primary Industries'
+    imageUrl:
+      "https://vijaykarnataka.com/thumb/111744426/these-herbal-teas-are-meant-for-controlling-blood-sugar-levels-very-efficiently-111744426.jpg?imgsize=1540148&width=700&height=394&resizemode=75",
+    title: "ಗಿಡಮೂಲಿಕೆಗಳಿಗೆ ಶುಗರ್ ಕಮ್ಮಿ ಮಾಡುವ ತಾಕತ್ತಿದೆ ಎಂದು ಇದಕ್ಕೆ ಹೇಳೋದು",
+    description: "Primary Industries",
   },
   {
-    imageUrl: 'https://images.tv9kannada.com/wp-content/uploads/2024/07/banana-flower.jpg?w=1280',
-    title: 'ಆರೋಗ್ಯಕರ ಬಾಳೆಹೂವಿನ ಪಕೋಡ, ಮಾಡೋದು ಸುಲಭ',
-    description: 'Primary Industries'
+    imageUrl:
+      "https://images.tv9kannada.com/wp-content/uploads/2024/07/banana-flower.jpg?w=1280",
+    title: "ಆರೋಗ್ಯಕರ ಬಾಳೆಹೂವಿನ ಪಕೋಡ, ಮಾಡೋದು ಸುಲಭ",
+    description: "Primary Industries",
   },
   {
-    imageUrl: 'https://vijaykarnataka.com/thumb/111729231/health-benefits-eating-of-cardamom-111729231.jpg?imgsize=2647985&width=700&height=394&resizemode=75',
-    title: 'ಏಲಕ್ಕಿ ತಿನ್ನೋದ್ರಿಂದ ಆರೋಗ್ಯಕ್ಕೆ ಯಾವೆಲ್ಲಾ ಲಾಭಗಳಿವೆ ಗೊತ್ತೆ?',
-    description: 'Primary Industries'
+    imageUrl:
+      "https://vijaykarnataka.com/thumb/111729231/health-benefits-eating-of-cardamom-111729231.jpg?imgsize=2647985&width=700&height=394&resizemode=75",
+    title: "ಏಲಕ್ಕಿ ತಿನ್ನೋದ್ರಿಂದ ಆರೋಗ್ಯಕ್ಕೆ ಯಾವೆಲ್ಲಾ ಲಾಭಗಳಿವೆ ಗೊತ್ತೆ?",
+    description: "Primary Industries",
   },
   {
-    imageUrl: 'https://images.tv9kannada.com/wp-content/uploads/2024/07/lifestyle-news-in-kannada-2024-07-11t111440.805.jpg?w=1280',
-    title: 'ಮಳೆಗಾಲದ ಸ್ಪೆಷಲ್ ರೆಸಿಪಿ ತಗತೆ ಸೊಪ್ಪಿನ ಪಲ್ಯ, ಮಾಡುವುದು ಹೇಗೆ?',
-    description: 'Primary Industries'
-  }
+    imageUrl:
+      "https://images.tv9kannada.com/wp-content/uploads/2024/07/lifestyle-news-in-kannada-2024-07-11t111440.805.jpg?w=1280",
+    title: "ಮಳೆಗಾಲದ ಸ್ಪೆಷಲ್ ರೆಸಿಪಿ ತಗತೆ ಸೊಪ್ಪಿನ ಪಲ್ಯ, ಮಾಡುವುದು ಹೇಗೆ?",
+    description: "Primary Industries",
+  },
 ];
 
 function Homed() {
@@ -39,7 +45,9 @@ function Homed() {
         {items.map((item, index) => (
           <div key={index} className="lg:w-80 space-y-1">
             <img src={item.imageUrl} alt="" />
-            <p className="text-xs text-gray-500 font-semibold uppercase">{item.description}</p>
+            <p className="text-xs text-gray-500 font-semibold uppercase">
+              {item.description}
+            </p>
             <h1 className="md:text-xl text-base font-bold">{item.title}</h1>
           </div>
         ))}

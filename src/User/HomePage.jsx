@@ -10,9 +10,9 @@ function HomePage() {
   return (
     <div className="">
      
-      <div className="z-[9999]">
+      {/* <div className="z-[9999]">
         <Header />
-      </div>
+      </div> */}
 
       <div>
         <Banner />

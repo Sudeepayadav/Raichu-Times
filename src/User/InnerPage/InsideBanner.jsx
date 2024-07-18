@@ -14,11 +14,11 @@ const Insidebanner = () => {
 
         <div className="flex items-center justify-between ml-12 ">
           <span>LBS Nagar, Raichur</span>
-          <button className="text-medium mr-16 -mt-1" >Share <IoShareSocial  className="ml-16 -mt-5"/></button>
+          <button className="text-medium mr-16 -mt-1">
+            Share <IoShareSocial className="ml-16 -mt-5" />
+          </button>
         </div>
-        
       </div>
-      
 
       <div className=" md:flex items-center justify-center sm:block w-full ">
         <img
@@ -26,7 +26,6 @@ const Insidebanner = () => {
           className=" h-500 w-fit ml-20 "
         />
       </div>
-      
     </div>
   );
 };

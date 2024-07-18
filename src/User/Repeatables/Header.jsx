@@ -50,7 +50,7 @@ const Header = () => {
                   type="button"
                   className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
                 >
-                  ಸಂಕ್ಷಿಪ್ತ{" "}
+                  ಸಂಕ್ಷಿಪ್ತ
                 </button>
                 <div className="absolute mt-1 w-48 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
                   <a

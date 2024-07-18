@@ -131,9 +131,7 @@ function Article() {
           </div>
         </div>
         <div className="md:hidden sm: mr-7 ">
-          <span className="p-0 text-gray-500 text-sm">
-            Advertisement
-          </span>
+          <span className="p-0 text-gray-500 text-sm">Advertisement</span>
           <img
             src="https://newspaperads.ads2publish.com/wp-content/uploads/2024/02/reliance-fashion-factory-brands-for-less-ad-gujarat-samachar-ahmedabad-03-02-2024.jpg"
             className="h-24 w-full object-cover "

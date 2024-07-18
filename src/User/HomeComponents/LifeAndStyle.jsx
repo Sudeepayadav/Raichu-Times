@@ -1,36 +1,39 @@
-import React from 'react';
+import React from "react";
 
 function LifeAndStyle() {
   const articles = [
     {
-      src: 'https://images.tv9kannada.com/wp-content/uploads/2024/07/muharram.jpg?w=1280',
-      alt: 'Image 1',
-      category: 'primary industries',
-      title: 'ಹಿಂದೂ ಹಾಗೂ ಮುಸ್ಲಿಮರ ಭಾವೈಕ್ಯತೆಯ ಹಬ್ಬವೇ ‘ಮೊಹರಂ’, ಏನಿದರ ಮಹತ್ವ?',
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/muharram.jpg?w=1280",
+      alt: "Image 1",
+      category: "primary industries",
+      title: "ಹಿಂದೂ ಹಾಗೂ ಮುಸ್ಲಿಮರ ಭಾವೈಕ್ಯತೆಯ ಹಬ್ಬವೇ ‘ಮೊಹರಂ’, ಏನಿದರ ಮಹತ್ವ?",
     },
     {
-      src: 'https://images.tv9kannada.com/wp-content/uploads/2024/07/lifestylenews-in-kannada-.jpg?w=1280',
-      alt: 'Image 2',
-      category: 'primary industries',
-      title: 'ಮನೆಯ ಸ್ವಚ್ಛತೆಗೂ ಇರಲಿ ಟೈಮ್ ಟೇಬಲ್, ಸ್ವಚ್ಛತೆ ಹೇಗಿರಬೇಕು? ಇಲ್ಲಿದೆ ನೋಡಿ',
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/lifestylenews-in-kannada-.jpg?w=1280",
+      alt: "Image 2",
+      category: "primary industries",
+      title:
+        "ಮನೆಯ ಸ್ವಚ್ಛತೆಗೂ ಇರಲಿ ಟೈಮ್ ಟೇಬಲ್, ಸ್ವಚ್ಛತೆ ಹೇಗಿರಬೇಕು? ಇಲ್ಲಿದೆ ನೋಡಿ",
     },
     {
-      src: 'https://images.tv9kannada.com/wp-content/uploads/2024/07/whatsapp-image-2024-07-11-at-17.40.29_e85850a7.jpg?w=1280',
-      alt: 'Image 3',
-      category: 'primary industries',
-      title: 'ಜುಲೈ 12 ರಂದೇ ವಿಶ್ವ ಪೇಪರ್ ಬ್ಯಾಗ್ ದಿನವನ್ನು ಆಚರಿಸುವುದು ಏಕೆ? ಇಲ್ಲಿದೆ ಮಾಹಿತಿ',
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/whatsapp-image-2024-07-11-at-17.40.29_e85850a7.jpg?w=1280",
+      alt: "Image 3",
+      category: "primary industries",
+      title:
+        "ಜುಲೈ 12 ರಂದೇ ವಿಶ್ವ ಪೇಪರ್ ಬ್ಯಾಗ್ ದಿನವನ್ನು ಆಚರಿಸುವುದು ಏಕೆ? ಇಲ್ಲಿದೆ ಮಾಹಿತಿ",
     },
     {
-      src: 'https://images.tv9kannada.com/wp-content/uploads/2024/07/viral-news-in-kannnada-elepent-5.jpg?w=1280',
-      alt: 'Image 4',
-      category: 'primary industries',
-      title: 'ಪೋಷಕರೇ ಮಕ್ಕಳ ಮುಂದೆ ಯಾವತ್ತೂ ಈ ರೀತಿ ನಡೆದುಕೊಳ್ಳಬೇಡಿ',
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/viral-news-in-kannnada-elepent-5.jpg?w=1280",
+      alt: "Image 4",
+      category: "primary industries",
+      title: "ಪೋಷಕರೇ ಮಕ್ಕಳ ಮುಂದೆ ಯಾವತ್ತೂ ಈ ರೀತಿ ನಡೆದುಕೊಳ್ಳಬೇಡಿ",
     },
     {
-      src: 'https://images.tv9kannada.com/wp-content/uploads/2024/07/national-fish-farmers-day.jpg?w=1280',
-      alt: 'Image 5',
-      category: 'primary industries',
-      title: 'ರಾಷ್ಟ್ರೀಯ ಮೀನು ಕೃಷಿಕರ ದಿನವನ್ನು ಭಾರತೀಯ ವಿಜ್ಞಾನಿಗಳಿಗೆ ಸಮರ್ಪಿಸುವುದು ಏಕೆ? ಇಲ್ಲಿದೆ ಮಾಹಿತಿ',
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/national-fish-farmers-day.jpg?w=1280",
+      alt: "Image 5",
+      category: "primary industries",
+      title:
+        "ರಾಷ್ಟ್ರೀಯ ಮೀನು ಕೃಷಿಕರ ದಿನವನ್ನು ಭಾರತೀಯ ವಿಜ್ಞಾನಿಗಳಿಗೆ ಸಮರ್ಪಿಸುವುದು ಏಕೆ? ಇಲ್ಲಿದೆ ಮಾಹಿತಿ",
     },
   ];
 
@@ -53,7 +56,6 @@ function LifeAndStyle() {
             </div>
           ))}
         </div>
-
       </div>
     </>
   );
