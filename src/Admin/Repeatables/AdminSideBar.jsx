@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { TbLogout } from "react-icons/tb";
 import { MdAddCircleOutline } from "react-icons/md";
 import { BiCategory } from "react-icons/bi";
+import { IoNewspaperOutline } from "react-icons/io5";
+import { IoMdInformationCircleOutline } from "react-icons/io";
+import { IoHomeOutline } from "react-icons/io5";
 
 const AdminSidebar = () => {
   const [isEcommerceOpen, setIsEcommerceOpen] = useState(false);
@@ -16,14 +19,15 @@ const AdminSidebar = () => {
       <div className="flex flex-col mb-4">
         <h2 className="text-2xl font-bold mb-1 capitalize">Admin Panel</h2>
       </div>
+      <Link
+        to="/admin/"
+        className="flex gap-2 pl-3 items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg  group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
+      >
+        <IoHomeOutline />
+
+        <span>Home</span>
+      </Link>
       <div className="space-y-4">
-        <Link
-          to="/"
-          className="flex items-center py-2 px-3 rounded hover:bg-gray-500 hover:text-white transition duration-200"
-        >
-          <MdAddCircleOutline className="mr-2" />
-          Home Page
-        </Link>
         <div>
           <button
             type="button"
@@ -56,74 +60,74 @@ const AdminSidebar = () => {
             <ul className="py-2 space-y-2">
               <li>
                 <Link
-                  to="/topnews"
-                  className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
+                  to="/admin/topnews"
+                  className="flex gap-2 items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Top News{" "}
+                  <span>Top News </span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/inform"
-                  className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
+                  to="/admin/inform"
+                  className="flex gap-2 items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Inform{" "}
+                  <span> Inform</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/peopletalk"
+                  to="/admin/peopletalk"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  People Talk About{" "}
+                  <span> People Talk About</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/shortnews"
+                  to="/admin/shortnews"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Short News{" "}
+                  <span> Short News</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/business"
+                  to="/admin/business"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Business{" "}
+                  <span> Business</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/money"
+                  to="/admin/money"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Money{" "}
+                  <span> Money</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/travel"
+                  to="/admin/travel"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Travel{" "}
+                  <span> Travel</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/home"
+                  to="/admin/home"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Homed{" "}
+                  <span> Homed</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/lifestyle"
+                  to="/admin/lifestyle"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Life And Style{" "}
+                  <span> Life And Style</span>
                 </Link>
               </li>
               <li>
@@ -131,14 +135,14 @@ const AdminSidebar = () => {
                   to="/admin/sports"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
                 >
-                  Sport{" "}
+                  <span> Sport</span>
                 </Link>
               </li>
             </ul>
           )}
         </div>
         <Link
-          to="/"
+          to="/adminlogin"
           className="flex items-center py-2 px-3 rounded hover:bg-gray-500 hover:text-white transition duration-200"
         >
           <TbLogout className="mr-2" />

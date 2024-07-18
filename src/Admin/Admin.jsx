@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AdminSidebar from "./AdminSideBar";
+import AdminSidebar from "./Repeatables/AdminSideBar";
 import AdminBanner from "./AdminBanner/AdminBanner";
 import AdminTopNews from "./AdminTopNews";
 import AdminInform from "./AdminInform";

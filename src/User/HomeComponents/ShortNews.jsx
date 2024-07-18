@@ -18,33 +18,33 @@ function ShortNews() {
       href: "#",
     },
     {
-      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/nita-mukesh-ambani.jpg",
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/nita-mukesh-ambani.jpg?w=670&ar=16:9",
       alt: "Image 4",
       href: "#",
     },
     {
-      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/neuralink-feature-1-1.jpg",
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/neuralink-feature-1-1.jpg?w=670&ar=16:9",
       alt: "Image 5",
       href: "#",
     },
     {
-      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/radhika-wedding.jpg",
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/radhika-wedding.jpg?w=670&ar=16:9",
       alt: "Image 6",
       href: "#",
     },
     {
-      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/nita-mukesh-ambani.jpg",
-      alt: "Image 4",
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/nita-mukesh-ambani.jpg?w=670&ar=16:9",
+      alt: "Image 7",
       href: "#",
     },
     {
-      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/neuralink-feature-1-1.jpg",
-      alt: "Image 5",
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/neuralink-feature-1-1.jpg?w=670&ar=16:9",
+      alt: "Image 8",
       href: "#",
     },
     {
-      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/radhika-wedding.jpg",
-      alt: "Image 6",
+      src: "https://images.tv9kannada.com/wp-content/uploads/2024/07/radhika-wedding.jpg?w=670&ar=16:9",
+      alt: "Image 9",
       href: "#",
     },
   ];
@@ -66,14 +66,14 @@ function ShortNews() {
       <div>
         <h1 className="text-3xl font-bold my-7">Short News</h1>
       </div>
-      <div className=" flex space-x-4 overflow-x-auto">
+      <div className="flex flex-wrap md:flex-nowrap md:overflow-x-auto space-x-4">
         {displayedImages.map((image, index) => (
-          <div key={index}>
+          <div key={index} className="flex-none w-full md:w-60">
             <a href={image.href}>
               <img
                 src={image.src}
                 alt={image.alt}
-                className="rounded-xl w-60 h-80"
+                className="rounded-xl w-full h-60 md:h-80 object-cover"
               />
             </a>
           </div>

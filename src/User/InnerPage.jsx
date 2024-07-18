@@ -10,7 +10,7 @@ import Footer from "./Repeatables/Footer";
 function InnerPage() {
   return (
     <div>
-      <Header />
+      <Header />  
       <Layout />
       <Subpage />
       <Bottom />

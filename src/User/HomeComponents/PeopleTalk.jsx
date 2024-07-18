@@ -98,17 +98,17 @@ function PeopleTalk() {
           alt="img"
         />
       </div>
-      <hr className="w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
+      <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
       <ShortNews />
-      <hr className="w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
+      <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
       <Business />
-      <hr className="w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
+      <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
       <Money />
-      <hr className="w-[1400px] h-px mx-auto my-8 bg-gray-100 border-0 rounded dark:bg-gray-700" />
+      <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
       <Travel />
-      <hr className="w-[1400px] h-px mx-auto my-8 bg-gray-100 border-0 rounded dark:bg-gray-700" />
+      <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
       <Homed />
-      <hr className="w-[1400px] h-px mx-auto my-8 bg-gray-100 border-0 rounded dark:bg-gray-700" />
+      <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700" />
       <LifeAndStyle />
     </>
   );

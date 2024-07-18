@@ -6,7 +6,7 @@ const Insidebanner = () => {
   return (
     <div className=" my-8 mt-40">
       {/* Headline */}
-      <div className=" m-8 p-4 flex flex-col mb-4 mr-7 ">
+      <div className=" m-8 p-4 md:flex flex-col mb-4 mr-7 ">
         <h1 className=" text-3xl font-bold ml-10">
           ಪುಟಿನ್ – ಮೋದಿ ಭೇಟಿ – ರಷ್ಯಾ ಸೇನೆಯಲ್ಲಿದ್ದ ಭಾರತೀಯರ ಬಿಡುಗಡೆಗೆ ಅಸ್ತು
         </h1>
@@ -20,7 +20,7 @@ const Insidebanner = () => {
       </div>
       
 
-      <div className=" flex items-center justify-center">
+      <div className=" md:flex items-center justify-center sm:block w-full ">
         <img
           src="https://foreignpolicy.com/wp-content/uploads/2021/12/modi-putin-meeting-2021-GettyImages-1237050361.jpg?w=1000"
           className=" h-500 w-fit ml-20 "

@@ -3,12 +3,12 @@ import { BsEnvelopeFill } from "react-icons/bs";
 
 function Inform() {
   return (
-    <div className="flex mt-10">
-      <div className="w-[360px]">
+    <div className="flex mt-10 border-t border-gray-600 pt-6"><hr />
+      <div className="w-[360px] ">
         <a href="https://www.amazon.in/s?k=watches+for+men&crid=1A6RW0EHSBL98&sprefix=wat%2Caps%2C261&ref=nb_sb_ss_w_hit-vc-lth_watches-for-men_k0_1_3">
           <img
-            className="h-[460px] w-60  mt-2"
-            src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/special-sale-ad-template-design-2cd0286a2af3ec0f1a6a98009dc155f7_screen.jpg?ts=15859"
+            className="w-60  mt-2"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8HaAvyDtzRN6KjXmaRzyZUK0TGZcYRJYVqA&s"
             alt="ads"
           />
         </a>
@@ -18,7 +18,6 @@ function Inform() {
         <div className="md:w-9/12 w-screen md:ml-0 md:flex m-auto pl-5 pr-5">
           <div className="text-xs space-y-6">
             <div className="space-y-3">
-              {/* <h1 className='text-gray-500 font-bold'>ಕ್ರೀಡಾ ಸುದ್ದಿ</h1> */}
               <h1 className="text-xl text-black font-bold">
                 ರಾಯಚೂರಿನಲ್ಲಿ ಏಮ್ಸ್ ಸ್ಥಾಪಿಸದೆ ಕೇಂದ್ರದಿಂದ ಮಲತಾಯಿ ಧೋರಣೆ: ಸಚಿವ ಶರಣ
                 ಪ್ರಕಾಶ್ ಪಾಟೀಲ್
@@ -31,14 +30,11 @@ function Inform() {
                   ಅತ್ಯುತ್ತಮ ಚಿಕಿತ್ಸಾ ಸೌಲಭ್ಯವನ್ನು ಒದಗಿಸುವ ಉದ್ದೇಶದಿಂದ
                   ಅನುಕೂಲವಾಗುತ್ತದೆ.
                 </p>
-                {/* <p>ಕೇಂದ್ರ ಆರೋಗ್ಯ ಮತ್ತು ಕುಟಿಲ ಸಚಿವ ಶರಣ ಪ್ರಕಾಶ್ ಪಾಟೀಲ್ ಅವರು ಈ ಮಾಹಿತಿಯನ್ನು ಪ್ರಕಟಿಸಿದ್ದಾರೆ. ಅವರು ರಾಯಚೂರು ಪ್ರದೇಶದಲ್ಲಿ ಏಮ್ಸ್ ಅಸ್ಪತ್ರೆಯ ಅವಶ್ಯಕತೆಯ ಬಗ್ಗೆ ಮಾಹಿತಿ ಒದಗಿಸಿದ್ದಾರೆ.</p> */}
               </h1>
-              {/* <p>by <span className='text-gray-600 font-bold'>Sarah Cowley </span>and <span className='text-gray-600 font-bold'>Suzanne McFadden</span></p> */}
             </div>
             <hr />
 
             <div className="space-y-3">
-              {/* <h1 className='text-gray-500 font-bold'>ಆರೋಗ್ಯ ಮತ್ತು ವಿಜ್ಞಾನ <span className='text-white bg-red-600'> PRO </span></h1> */}
               <h1 className="text-xl text-black font-bold">
                 ಕರಾವಳಿಯಲ್ಲಿ ಡೆಂಗ್ಯೂ, ವೈರಲ್‌ ಜ್ವರ ಅಬ್ಬರ: ಲ್ಯಾಬ್‌ಗಳಲ್ಲಿ ರಕ್ತ
                 ಪರೀಕ್ಷೆ ಹೆಚ್ಚಳ
@@ -52,12 +48,10 @@ function Inform() {
                   ಒದಗಿಸುತ್ತವೆ.
                 </p>
               </h1>
-              {/* <p>by <span className='text-gray-600 font-bold'>Marc Daalder</span></p> */}
             </div>
             <hr />
 
             <div className="space-y-3">
-              {/* <h1 className='text-gray-500 font-bold'>Infrastructure</h1> */}
               <h1 className="text-xl text-black font-bold">
                 ಜಾಲಿ ರೈಡ್ ಮಾಡಲು ಹೋಗಿ ಮೃತಪಟ್ಟ ಇಬ್ಬರು ಬಾಲಕರು: ಹೊಸಕೋಟೆ ಬಿರಿಯಾನಿ
                 ತಿಂದು ಬರುವಾಗ ನಡೆಯಿತು ದುರ್ಘಟನೆ!
@@ -70,13 +64,13 @@ function Inform() {
                 ಬಿರಿಯಾನಿ ಸೇವಿಸಿ, ಪಾರ್ಸೆಲ್ ತೆಗೆದುಕೊಂಡು ಬರುವಾಗ ಈ ಘಟನೆ ನಡೆದಿದೆ
                 ಎನ್ನಲಾಗಿದೆ.
               </h1>
-              {/* <p>by <span className='text-gray-600 font-bold'>Lindsay Wood</span></p> */}
+
               <hr />
             </div>
           </div>
         </div>
         <div className="mr-2">
-          <div className="w-[350px] bg-black h-fit text-white">
+          <div className="md:w-[350px] w-full bg-black h-fit text-white ml-2">
             <BsEnvelopeFill className="size-16 m-auto" />
             <h1 className="text-center text-4xl py-7">
               daily<span className="text-blue-300">briefing</span>
@@ -85,7 +79,7 @@ function Inform() {
               Start your day with a curtain of our <br /> top stories in your
               inbox
             </p>
-            <div className="text-center bg-blue-200 flex">
+            <div className="text-center bg-blue-200 flex justify-center">
               <div className="p-4 ml-3">
                 <input
                   type="email"
@@ -98,9 +92,12 @@ function Inform() {
               </div>
             </div>
           </div>
-            <div className="border mt-10 w-[350px]">
-                <img src="https://tpc.googlesyndication.com/simgad/16028606041612924625" alt="img" />
-            </div>
+          <div className="border mt-10 w-[350px]">
+            <img
+              src="https://tpc.googlesyndication.com/simgad/16028606041612924625"
+              alt="img"
+            />
+          </div>
         </div>
       </div>
 
@@ -108,7 +105,7 @@ function Inform() {
         <a href="https://www.amazon.in/s?k=iphone&crid=2WD0LDP7CCV7S&sprefix=iphone%2Caps%2C272&ref=nb_sb_noss_1">
           {" "}
           <img
-            className="h-[460px] w-60 "
+            className="w-60 "
             src="https://img.freepik.com/premium-vector/new-headphone-sale-modern-brand-promotion_784890-2660.jpg?ga=GA1.1.630307654.1719551218&semt=ais_user"
             alt=""
           />

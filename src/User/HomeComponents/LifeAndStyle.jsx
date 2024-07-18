@@ -36,13 +36,13 @@ function LifeAndStyle() {
 
   return (
     <>
-      <div className="md:w-11/12 h-fit w-screen md:m-auto font-sans md:p-0 p-5">
+      <div className="md:w-11/12 h-fit w-full md:m-auto font-sans md:p-0 p-5">
         <h1 className="font-semibold text-3xl my-7">
           Life And Style <span className="font-medium">⮞</span>
         </h1>
         <div className="md:flex md:space-x-4 md:space-y-0 space-y-4  border-gray-200">
           {articles.map((article, index) => (
-            <div key={index} className="w-80  space-y-2 md:border-gray-200 ">
+            <div key={index} className="lg:w-80 space-y-2 md:border-gray-200 ">
               <img src={article.src} alt={article.alt} className="mb-2" />
               <p className="text-xs text-gray-500 font-semibold uppercase">
                 {article.category}

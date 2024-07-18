@@ -6,11 +6,11 @@ const TopBar = () => {
     <div>
       {/* Date, weather and movie */}
 
-      <div className=" flex p-2 gap-4  bg-white ">
+      <div className=" flex  gap-4  bg-white ">
         
         {/* Date  */}
 
-        <div className=" p-4 h-auto flex items-center  lg:w-1/4 bg-[#3B3B3B] w-max rounded-2xl">
+        <div className=" p-4 h-auto flex items-center  lg:w-1/4 bg-[#3B3B3B] blur-sm w-max rounded-2xl">
           <div className=" ">
             <p className=" text-[#EE5C51] font-bold text-lg">ಸೋಮವಾರ</p>
             <div className="flex gap-2">
@@ -24,7 +24,7 @@ const TopBar = () => {
         </div>
         
         {/* Weather */}
-        <div className=" h-auto bg-[#3B3B3B] w-max rounded-2xl p-2 px-4">
+        <div className=" h-auto bg-[#3B3B3B] w-max blur-sm  rounded-2xl p-2 px-4">
           <div className=" flex justify-between ">
             <div>
               <p className=" text-white text-xs">ರಾಯಚೂರು</p>
@@ -49,7 +49,7 @@ const TopBar = () => {
 
           {/* Weather Forecast */}
 
-          <div className=" flex gap-4 justify-between">
+          <div className=" flex gap-4 justify-between blur-sm ">
             <div className=" p-1 space-y-2 text-center text-xs text-white leading-3">
               <span className=" ">1 PM</span>
               <p>
@@ -115,7 +115,7 @@ const TopBar = () => {
 
         {/* Theatre timing */}
 
-        <div className=" h-auto flex justify-evenly bg-[#3B3B3B] text-white rounded-2xl items-center p-2  ">
+        <div className="blur-sm  h-auto flex justify-evenly bg-[#3B3B3B] text-white rounded-2xl items-center p-2  ">
           <div className=" flex text-center p-1 items-center">
             <span className=" font-bold">ರಾಯಚೂರು ಥಿಯೇಟರ್</span>
           </div>
