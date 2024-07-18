@@ -52,7 +52,11 @@ function Money() {
             <p className="text-sm text-gray-500 font-semibold">
               {item.category}
             </p>
-            <h1 className="md:text-xl text-base font-bold">{item.title}</h1>
+            <h1 className="md:text-xl text-base font-bold">
+              {item.title.length > 50
+                ? `${item.title.slice(0, 50)}...`
+                : item.title}
+            </h1>
           </div>
         ))}
       </div>

@@ -2,20 +2,20 @@ import React from "react";
 
 function Sport() {
   return (
-    <>
-      <div className="w-11/12 m-auto">
-        <h2 className="p-4 text-2xl font-bold">Sport</h2>
+    <div className="lg:p-10">
+      <div className="md:w-11/12 w-full">
+        <h2 className="p-4 text-2xl font-bold">Sports ⮞</h2>
       </div>
-      <div className="flex w-11/12 m-auto text-start mb-8">
-        <div className="w-3/5">
-          <div className="flex">
-            <div className="w-4/5 p-5 border-r border-gray-600 border-b">
+      <div className="md:flex md:w-11/12 mb-8">
+        <div className="md:w-3/5">
+          <div className="md:flex">
+            <div className="md:w-4/5 p-5 md:border-r border-gray-600 border-b ">
               <img
                 src="https://images.prajavani.net/prajavani%2F2024-07%2F58d53a1d-616b-4605-8ef8-8e22eeecea26%2FIND-vs-PAK.jpg?rect=0%2C0%2C800%2C450&auto=format%2Ccompress&fmt=webp&fit=max&format=webp&w=300&dpr=1.3"
                 alt=""
-                className="h-96"
+                className="md:h-96 w-fit md: mb-3"
               />
-              <a href="#" className="text-2xl font-bold">
+              <a href="#" className="md:text-2xl text-xl font-bold">
                 ಧೋನಿ ಇಲ್ಲದ ಸಾರ್ವಕಾಲಿಕ ಬೆಸ್ಟ್‌ ಪ್ಲೇಯಿಂಗ್ XI ಕಟ್ಟಿದ ಯುವರಾಜ್ ಸಿಂಗ್!
               </a>
               <p>
@@ -26,17 +26,17 @@ function Sport() {
                 ಚಾಂಪಿಯನ್‌ಷಿಪ್‌ ಟೂರ್ನಿಯಲ್ಲಿ ಟ್ರೋಫಿ ಗೆದ್ದಿದೆ.{" "}
               </p>
             </div>
-            <div className="p-5 w-1/5 border-r border-gray-600 border-b">
+            <div className="p-5 md:w-1/5 md:border-r border-b border-gray-600">
               <img
                 src="https://images.prajavani.net/prajavani%2F2024-07%2F6a8c2b3d-97fd-4ee1-b34b-c7831a7a39ab%2FCopa%20America%202024%20Final.jpg?rect=0%2C0%2C1200%2C675&auto=format%2Ccompress&fmt=webp&fit=max&format=webp&w=300&dpr=1.3"
                 alt=""
+                className="md: mb-3"
               />
-              <a className="text-xs font-bold p-2">
+              <a className="md:text-xs text-xl font-bold p-2 ">
                 {" "}
                 ಕೊಲಂಬಿಯಾಗೆ ಸೋಲುಣಿಸಿ 16ನೇ ಕೋಪಾ ಅಮೆರಿಕ ಟ್ರೋಫಿ ಗೆದ್ದ ಅರ್ಜೆಂಟೀನಾ!
               </a>
-              <p className="text-xs">
-                {" "}
+              <p className="md:text-xs ">
                 ಲಿಯೋನೆಲ್‌ ಮೆಸ್ಸಿ ಸಾರಥ್ಯದ ಅರ್ಜೆಂಟೀನಾ ರಾಷ್ಟ್ರೀಯ ಫುಟ್ಬಾಲ್‌ ತಂಡ
                 ಮತ್ತೊಂದು ಯಶಸ್ಸು ಕಂಡಿದೆ. ಪ್ರತಿಷ್ಠಿತ ಕೋಪಾ ಅಮೆರಿಕ ಫುಟ್ಬಾಲ್‌
                 ಟೂರ್ನಿಯಲ್ಲಿ ಅರ್ಜೆಂಟೀನಾ ತಂಡ
@@ -44,19 +44,19 @@ function Sport() {
             </div>
           </div>
           <div>
-            <div className=" overflow-hidden  mx-auto border-b border-gray-600">
-              <div className="flex p-4">
+            <div className=" overflow-hidden  mx-auto border-b  border-gray-600">
+              <div className="md:flex p-4">
                 <img
                   src="https://images.tv9kannada.com/wp-content/uploads/2024/07/uttara-kannada-rain.jpg?w=1280"
                   alt="Boxer"
-                  className="w-48 object-cover h-24"
+                  className="md:w-48 object-cover md:h-24 md: mb-3"
                 />
-                <div className="">
-                  <a href="#" className="text-sm font-semibold">
+                <div className="ml-3">
+                  <a href="#" className="md:text-sm text-xl font-semibold">
                     ಕರ್ನಾಟಕದಲ್ಲಿ ಭಾರೀ ಮಳೆ: ಈ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ನಾಳೆ ಶಾಲಾ-ಕಾಲೇಜುಗಳಿಗೆ
                     ರಜೆ ಘೋಷಣೆ
                   </a>
-                  <p className="mt-2 text-sm text-gray-700">
+                  <p className="mt-2 md:text-sm text-gray-700">
                     ಕರ್ನಾಟಕದ ಹಲವೆಡೆ ಮುಂಗಾರು ಮಳೆ ಅಬ್ಬರ ಮುಂದುವರಿದೆ. ಅದರಲ್ಲೂ
                     ಮಲೆನಾಡು, ಕರಾವಳಿ ಜಿಲ್ಲೆಗಳಲ್ಲಿ ಜನರನ್ನು ಹೊರಗೆ ಬಿಡದೇ ಮಳೆ ದೋ ಅಂತ
                     ಸುರಿಯುತ್ತಿದೆ.{" "}
@@ -65,18 +65,18 @@ function Sport() {
               </div>
             </div>
             <div className=" overflow-hidden  mx-auto">
-              <div className="flex p-4">
+              <div className="md:flex p-4">
                 <img
                   src="https://images.tv9kannada.com/wp-content/uploads/2024/07/malenaduredalert.jpg?w=1280"
                   alt="Boxer"
-                  className="w-48 object-cover h-24"
+                  className="md:w-48 object-cover md:h-24"
                 />
-                <div className="">
-                  <a href="#" className="text-sm font-semibold">
+                <div className="ml-3">
+                  <a href="#" className="md:text-sm text-xl font-semibold">
                     ಚಿಕ್ಕಮಗಳೂರಿನಲ್ಲಿ ಪ್ರವಾಸಿಗರ ಹುಚ್ಚಾಟ: ಮದ್ಯ ಸೇವಿಸಿ
                     ಸಮುದ್ರಕ್ಕಿಳಿದ ಜನ,
                   </a>
-                  <p className="mt-2 text-sm text-gray-700">
+                  <p className="mt-2 md:text-sm text-gray-700 md: border-b border-gray-600 ">
                     ಇದೀಗ ಎಲ್ಲೆಡೆ ಮಳೆ ಆಗುತ್ತಿದೆ. ಹೀಗಾಗಿ ನಿಸರ್ಗ ದೇವತೆ ಹಸಿರಿನಿಂದ
                     ಕಂಗೊಳಿಸುತ್ತಿದ್ದಾಳೆ. ಪ್ರವಾಸಿಗರು ನಿಸರ್ಗ ಸೌಂದರ್ಯ ಸವಿಯಲು
                     ಬರುತ್ತಿದ್ದಾರೆ.
@@ -86,15 +86,16 @@ function Sport() {
             </div>
           </div>
         </div>
-        <div className="w-1/5 p-5 text-xs font-semibold">
-          <div className="p-4 border-b border-gray-600">
+        <div className="md:w-1/5 w-full p-5 md:text-xs  font-semibold   ">
+          <div className="p-4 border-b border-gray-600 ">
             <a href="">
               ಕೋಟ್ಯಧಿಪತಿಗಳ ಮೇಲೆ ಕೇಂದ್ರ ಸರ್ಕಾರದ ಕಣ್ಣು, ಕ್ರಾಂತಿಕಾರಕ ನಿರ್ಧಾರ
               ಕೈಗೊಳ್ತಾರಾ ನಿರ್ಮಲಾ ಸೀತಾರಾಮನ್‌?
             </a>
           </div>
           <hr />
-          <div className="p-4  border-b border-gray-600">
+
+          <div className="p-4  border-b border-gray-600 md:block flex">
             <a href="">
               ಕರ್ನಾಟಕ ಸರ್ಕಾರಿ ನೌಕರರಿಗೆ ಗುಡ್‌ನ್ಯೂಸ್‌! 7ನೇ ವೇತನ ಆಯೋಗ ಜಾರಿಗೆ ಸಚಿವ
               ಸಂಪುಟ ಸಭೆ ನಿರ್ಧಾರ; ಯಾವಾಗಿನಿಂದ ಜಾರಿ?
@@ -128,7 +129,14 @@ function Sport() {
             </a>
           </div>
         </div>
-        <div className="w-1/5 p-5 text-xs font-semibold">
+        <div className="md:hidden ">
+          <span className="p-0 text-gray-500 text-sm">Advertisement</span>
+          <img
+            src="https://newspaperads.ads2publish.com/wp-content/uploads/2024/02/reliance-fashion-factory-brands-for-less-ad-gujarat-samachar-ahmedabad-03-02-2024.jpg"
+            className="h-24 w-full object-cover "
+          />
+        </div>
+        <div className="md:w-1/5 w-full p-5 md:text-xs font-semibold">
           <div className="p-4  border-b border-gray-600">
             <a href="">
               ಪ್ಯಾರಿಸ್ ಒಲಿಂಪಿಕ್ಸ್​ನಿಂದ ಈ ಎರಡು ದೇಶಗಳಿಗೆ ನಿಷೇಧ..! ಕಾರಣವೇನು?
@@ -163,15 +171,22 @@ function Sport() {
             </a>
           </div>
           <hr />
-          <div className="p-3  border-b border-black">
+          <div className="p-4  border-b border-gray-600">
             <a href="">
               ಒಂದು ವರ್ಷದಲ್ಲಿ ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಗೆ 10 ಲಕ್ಷ ರೂ ಬಂದರೆ ಏನಾಗುತ್ತೆ? ಈ
               ನಿಯಮ ತಿಳಿದಿರಿ
             </a>
           </div>
         </div>
+        <div className="md:hidden text-end ">
+          <span className="p-0 text-gray-500 text-sm">Advertisement</span>
+          <img
+            src="https://newspaperads.ads2publish.com/wp-content/uploads/2024/02/reliance-fashion-factory-brands-for-less-ad-gujarat-samachar-ahmedabad-03-02-2024.jpg"
+            className="h-24 w-full object-cover sm: "
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

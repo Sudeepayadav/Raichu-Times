@@ -11,7 +11,8 @@ import AdminMoney from "./AdminMoney";
 import AdminTravel from "./AdminTravel";
 import AdminHomed from "./AdminHomed";
 import AdminLifeAndStyle from "./AdminLifeAndStyle";
-import AdminSport from "./AdminSport";
+import AdminSport from "./AdminSport"; 
+import EditNews from "./AdminBanner/EditNews";
 
 function Admin() {
   return (
@@ -31,6 +32,8 @@ function Admin() {
             <Route path="/home" element={<AdminHomed />} />
             <Route path="/lifestyle" element={<AdminLifeAndStyle />} />
             <Route path="/sports" element={<AdminSport />} />
+            <Route path="/edit-news" element={<EditNews />} />
+
           </Routes>
         </div>
       </div>

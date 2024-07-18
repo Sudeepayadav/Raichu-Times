@@ -1,5 +1,5 @@
 import React from "react";
-import EditSideNews from "./EditSideNews";
+import { FaRegEdit } from "react-icons/fa";
 
 const SideNews = () => {
   const newsItems = [
@@ -28,11 +28,27 @@ const SideNews = () => {
         "https://4.imimg.com/data4/UH/TS/MY-12818128/fssai-registration-consulting.jpg",
     },
   ];
-
+  const handleEdit = () => {
+  };
   return (
     <div className="w-2/5 z-[9999]">
       {newsItems.map((newsItem, index) => (
-        <EditSideNews key={index} newsItem={newsItem} />
+        <div className="grid grid-cols-3 border-b-2 relative">
+          <div className="col-span-2 px-4">
+            <h3 className="font-bold text-xs py-2">{newsItem.title}</h3>
+            <p className="text-xs mb-2">{newsItem.description}</p>
+          </div>
+          <div className="flex items-center col-span-1">
+            <img className="h-1/2" src={newsItem.imageUrl} alt="News" />
+          </div>
+          <button
+            onClick={handleEdit}
+            className="flex justify-center items-center gap-1 absolute top-2 right-2 px-2 py-1 bg-blue-500 text-white rounded"
+          >
+            <FaRegEdit />
+            Edit
+          </button>
+        </div>
       ))}
     </div>
   );

@@ -50,8 +50,11 @@ function LifeAndStyle() {
               <p className="text-xs text-gray-500 font-semibold uppercase">
                 {article.category}
               </p>
+
               <h1 className="md:text-xl text-base font-bold">
-                {article.title}
+                {article.title.length > 50
+                  ? `${article.title.slice(0, 50)}...`
+                  : article.title}
               </h1>
             </div>
           ))}

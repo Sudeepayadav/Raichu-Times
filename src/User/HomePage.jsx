@@ -10,22 +10,22 @@ function HomePage() {
   return (
     <div className="">
      
-      {/* <div className="z-[9999]">
+      <div className="z-[9999]">
         <Header />
-      </div> */}
+      </div> 
 
-      <div>
+       <div>
         <Banner />
-      </div>
-      <div className="">
+      </div> 
+       <div className="">
         <TopNews />
-      </div>
-      <div>
+      </div> 
+       <div>
         <PeopleTalk />
       </div>
-      <div>
+       <div>
         <Sport />
-      </div>
+      </div> 
       <div>
         <Footer />
       </div>

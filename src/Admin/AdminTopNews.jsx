@@ -79,7 +79,6 @@ function AdminTopNews() {
           </div>
         </div>
       </div>
-      <AdminInform/>
     </>
   );
 }
