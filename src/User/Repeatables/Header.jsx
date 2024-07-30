@@ -1,806 +1,290 @@
-import React, { useEffect, useState, useRef } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import Raichur from "/Raichur-Time-Kannada.png";
+import React, { useState } from "react";
+import { FaChevronDown, FaBars } from "react-icons/fa";
+// import "./Header.css";
 import { Link } from "react-router-dom";
+import Raichur from "/Raichur-Time-Kannada.png";
+import { FaCloudSunRain } from "react-icons/fa";
+const menuItems = [
+  {
+    title: "ಸಂಕ್ಷಿಪ್ತ",
+    links: [
+      "ಮನರಂಜನೆ",
+      "ವಾಣಿಜ್ಯ",
+      "ಜೋತಿಷ",
+      "ಕ್ರೀಡೆ",
+      "ಲೈಫ್‌ಸ್ಟೈಲ್",
+      "ಶಿಕ್ಷಣ-ಉದ್ಯೋಗ",
+      "ಟೆಕ್ನಾಲಜಿ",
+      "ಪಯಣ",
+    ],
+  },
+  { title: "ಸುದ್ದಿ", links: ["ದೇಶ", "ಕನ್ನಡ", "ಕ್ರೀಡೆ"] },
+  {
+    title: "ನಿಮ್ಮ ಜಿಲ್ಲೆ",
+    links: [
+      "ಬೆಂಗಳೂರು ನಗರ",
+      "ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ",
+      "ಬಾಗಲಕೋಟ",
+      "ಬೆಳಗಾವಿ",
+      "ಬಳ್ಳಾರಿ",
+      "ಬೀದರ್",
+      "ವಿಜಯಪುರ",
+      "ಚಾಮರಾಜನಗರ",
+      "ಚಿಕ್ಕಬಳ್ಳಾಪುರ",
+      "ಚಿಕ್ಕಮಗಳೂರು",
+      "ಚಿತ್ರದುರ್ಗ",
+      "ದಕ್ಷಿಣ ಕನ್ನಡ",
+      "ದಾವಣಗೆರೆ",
+      "ಧಾರವಾಡ",
+      "ಗದಗ",
+      "ಕಲಬುರ್ಗಿ",
+      "ಹಾಸನ",
+      "ಹಾವೇರಿ",
+      "ಕೊಡಗು",
+      "ಕೋಲಾರ",
+      "ಕೊಪ್ಪಳ",
+      "ಮಂಡ್ಯ",
+      "ಮೈಸೂರು",
+      "ರಾಯಚೂರು",
+      "ರಾಮನಗರ",
+      "ಶಿವಮೊಗ್ಗ",
+      "ತುಮಕೂರು",
+      "ಉಡುಪಿ",
+      "ಉತ್ತರ ಕನ್ನಡ",
+      "ವಿಜಯನಗರ",
+      "ಯಾದಗಿರಿ",
+    ],
+  },
+  {
+    title: "ವಾಣಿಜ್ಯ",
+    links: [
+      "ಅನಂತ್-ರಾಧಿಕಾ ವೆಡ್ಡಿಂಗ್",
+      "ಚಿನ್ನ & ಬೆಳ್ಳಿ ಬೆಲೆ",
+      "ವಾಣಿಜ್ಯ ಸುದ್ದಿ",
+      "ಬಜೆಟ್ 2024",
+      "ಕ್ರಿಪ್ಟೋ ಕರೆನ್ಸಿ",
+      "ಷೇರು ಮಾರುಕಟ್ಟೆ",
+      "ಪೆಟ್ರೋಲ್‌ & ಡೀಸೆಲ್‌ ಬೆಲೆ",
+    ],
+  },
+  {
+    title: "ಸಿನಿಮಾ",
+    links: ["ಸಿನಿಮಾ ಸುದ್ದಿ", "ಸಿನಿಮಾ ವಿಮರ್ಶೆ", "ರಂಗಭೂಮಿ", "ಡಿಜಿಟಲ್ ಒಟಿಟಿ"],
+  },
+  {
+    title: "ಜೀವನಶೈಲಿ",
+    links: [
+      "ಸಂಬಂಧ",
+      "ಆರೋಗ್ಯ",
+      "ಸೌಂದರ್ಯ",
+      "ಫಿಟ್‌ನೆಸ್‌",
+      "ಯೋಗ",
+      "ಫ್ಯಾಶನ್",
+      "ಮನೆ-ಅಲಂಕಾರ",
+    ],
+  },
+  {
+    title: "ಜ್ಯೋತಿಷ್ಯ",
+    links: [
+      "ದಿನ ಭವಿಷ್ಯ",
+      "ವಾರ ಭವಿಷ್ಯ",
+      "ರಾಶಿ ಹೊಂದಾಣಿಕೆ",
+      "ಪರಿಹಾರಗಳು",
+      "ಮಾಸಿಕ ಭವಿಷ್ಯ",
+    ],
+  },
+  {
+    title: "ಟೆಕ್ನಾಲಜಿ",
+    links: ["ಟೆಕ್ ಸುದ್ದಿ", "ಟಿಪ್ಸ್‌ - ಟ್ರಿಕ್ಸ್‌", "ಗ್ಯಾಜೆಟ್ಸ್", "ರಿವ್ಯೂ"],
+  },
+  {
+    title: "ಶಿಕ್ಷಣ",
+    links: [
+      "ಸುದ್ದಿ",
+      "ಎಕ್ಸಾಮ್‌ ಟಿಪ್ಸ್‌",
+      "ಪ್ರವೇಶ ಪರೀಕ್ಷೆಗಳು",
+      "ಪ್ರವೇಶಾತಿಗಳು",
+      "ಫಲಿತಾಂಶ",
+      "ಶಿಕ್ಷಣ ಟಿಪ್ಸ್",
+    ],
+  },
+  { title: "ಕ್ರೀಡೆ", links: ["ಕ್ರಿಕೆಟ್", "ಫುಟ್‌ಬಾಲ್"] },
+];
 
-const Header = () => {
-  const [isFixed, setIsFixed] = useState(false);
-  const imageRef = useRef(null);
+const Navbar = () => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const imageHeight = 260;
-      setIsFixed(scrollY > imageHeight);
-    };
+  const handleDropdownClick = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
-    <div className="bg-white w-full">
-      <Link to="/">
-        <div className="flex justify-center">
-          <img
-            src="https://s0.2mdn.net/simgad/12785257458376499487"
-            alt="ads"
-          />
+    <nav className=" border-b border-gray-200  relative">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        {/* <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Logo" />
+        <span className="text-2xl font-semibold whitespace-nowrap ">Flowbite</span>
+      </a> */}
+        <div className="w-full">
+          <Link to="/">
+            <div className="flex justify-center">
+              <img
+                src="https://s0.2mdn.net/simgad/12785257458376499487"
+                alt="ads"
+              />
+            </div>
+          </Link>
         </div>
-      </Link>
-      <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto bg-gray-100 border-0 rounded mt-2 dark:bg-gray-700" />
-
-      <div
-        className={`z-[9999999] bg-white w-full ${
-          isFixed ? "fixed top-0" : ""
-        }`}
-      >
-        <div className="font-playfair-display-sc text-center my-5">
-          <div className="flex justify-center items-center h-full">
-            <img src={Raichur} alt="img" className="w-[220px]" />
-          </div>
-        </div>
-        <div className="flex flex-row px-8 border-b-2 border-t-2 py-2 text-black font-sans justify-center">
-          <div className="w-4/5 font-bold text-xs">
-            <div className="relative inline-flex ">
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಸಂಕ್ಷಿಪ್ತ
-                </button>
-                <div className="absolute mt-1 w-48 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಮನರಂಜನೆ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವಾಣಿಜ್ಯ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಜೋತಿಷ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕ್ರೀಡೆ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಲೈಫ್‌ಸ್ಟೈಲ್{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಶಿಕ್ಷಣ-ಉದ್ಯೋಗ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಟೆಕ್ನಾಲಜಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಪಯಣ{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಸುದ್ದಿ{" "}
-                </button>
-                <div className="absolute mt-1 w-48 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ದೇಶ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕರ್ನಾಟಕ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕ್ರೀಡೆ{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
-                >
-                  ನಿಮ್ಮ ಜಿಲ್ಲೆ
-                </button>
-                <div className="absolute mt-1 w-48 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬೆಂಗಳೂರು ನಗರ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬೆಂಗಳೂರು ನಗರ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬಾಗಲಕೋಟ{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg bg-white text-gray-800 hover:text-red-500"
-                >
-                  ನಿಮ್ಮ ಜಿಲ್ಲೆ
-                </button>
-                <div className="absolute mt-1 w-96 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto grid grid-cols-2 gap-2">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬೆಂಗಳೂರು ನಗರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬಾಗಲಕೋಟ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬೆಳಗಾವಿ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬಳ್ಳಾರಿ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬೀದರ್
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವಿಜಯಪುರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಚಾಮರಾಜನಗರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಚಿಕ್ಕಬಳ್ಳಾಪುರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಚಿಕ್ಕಮಗಳೂರು
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಚಿತ್ರದುರ್ಗ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ದಕ್ಷಿಣ ಕನ್ನಡ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ದಾವಣಗೆರೆ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಧಾರವಾಡ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಗದಗ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕಲಬುರ್ಗಿ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಹಾಸನ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಹಾವೇರಿ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕೊಡಗು
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕೋಲಾರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕೊಪ್ಪಳ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಮಂಡ್ಯ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಮೈಸೂರು
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ರಾಯಚೂರು
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ರಾಮನಗರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಶಿವಮೊಗ್ಗ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ತುಮಕೂರು
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಉಡುಪಿ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಉತ್ತರ ಕನ್ನಡ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವಿಜಯನಗರ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಯಾದಗಿರಿ
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
-                >
-                  ವಾಣಿಜ್ಯ
-                </button>
-                <div className="absolute mt-1 w-48 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಅನಂತ್-ರಾಧಿಕಾ ವೆಡ್ಡಿಂಗ್{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಚಿನ್ನ & ಬೆಳ್ಳಿ ಬೆಲೆ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವಾಣಿಜ್ಯ ಸುದ್ದಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಬಜೆಟ್ 2024{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕ್ರಿಪ್ಟೋ ಕರೆನ್ಸಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಷೇರು ಮಾರುಕಟ್ಟೆ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಪೆಟ್ರೋಲ್‌ & ಡೀಸೆಲ್‌ ಬೆಲೆ{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಸಿನಿಮಾ
-                </button>
-                <div className="absolute mt-1 w-48 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಸಿನಿಮಾ ಸುದ್ದಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಸಿನಿಮಾ ವಿಮರ್ಶೆ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ರಂಗಭೂಮಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಡಿಜಿಟಲ್ ಒಟಿಟಿ{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg  bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಜೀವನಶೈಲಿ
-                </button>
-                <div className="absolute mt-1 w-48 bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಸಂಬಂಧ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಆರೋಗ್ಯ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಸೌಂದರ್ಯ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಫಿಟ್‌ನೆಸ್‌{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಯೋಗ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಫ್ಯಾಶನ್{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಮನೆ-ಅಲಂಕಾರ{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಜ್ಯೋತಿಷ್ಯ
-                </button>
-                <div className="absolute mt-1 w-max bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ದಿನ ಭವಿಷ್ಯ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವಾರ ಭವಿಷ್ಯ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ರಾಶಿ ಹೊಂದಾಣಿಕೆ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಪರಿಹಾರಗಳು
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಮಾಸಿಕ ಭವಿಷ್ಯ
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಟೆಕ್ನಾಲಜಿ
-                </button>
-                <div className="absolute mt-1 w-max bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಟೆಕ್ ಸುದ್ದಿ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಟಿಪ್ಸ್‌ - ಟ್ರಿಕ್ಸ್‌
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಗ್ಯಾಜೆಟ್ಸ್
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ರಿವ್ಯೂ
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಶಿಕ್ಷಣ
-                </button>
-                <div className="absolute mt-1 w-max bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಸುದ್ದಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಎಕ್ಸಾಮ್‌ ಟಿಪ್ಸ್‌{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಪ್ರವೇಶ ಪರೀಕ್ಷೆಗಳು{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಪ್ರವೇಶಾತಿಗಳು{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಫಲಿತಾಂಶ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಶಿಕ್ಷಣ ಟಿಪ್ಸ್{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಕ್ರೀಡೆ
-                  {/*<svg
-                  className="transform transition-transform duration-200 group-hover:rotate-180"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>  */}
-                </button>
-                <div className="absolute mt-1 w-max bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕ್ರಿಕೆಟ್{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಫುಟ್‌ಬಾಲ್{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವಿಶ್ವಕಪ್{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಟೆನ್ನಿಸ್{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಇತರ ಕ್ರೀಡೆಗಳು{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg bg-white text-gray-800 hover:text-red-500"
-                >
-                  ಶಿಕ್ಷಣ
-                </button>
-                <div className="absolute mt-1 w-max bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಸುದ್ದಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಎಕ್ಸಾಮ್‌ ಟಿಪ್ಸ್‌{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಪ್ರವೇಶ ಪರೀಕ್ಷೆಗಳು{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಪ್ರವೇಶಾತಿಗಳು{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಫಲಿತಾಂಶ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಶಿಕ್ಷಣ ಟಿಪ್ಸ್{" "}
-                  </a>
-                </div>
-              </div>
-              <div className="relative group">
-                <button
-                  type="button"
-                  className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-bold rounded-lg bg-white text-gray-800 hover:text-red-500"
-                >
-                  More ⋮
-                </button>
-                <div className="absolute mt-1 w-max bg-white shadow-md rounded-lg py-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಅಟೋಮೊಬೈಲ್‌{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವೆಬ್‌ ಸ್ಟೋರಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕೊರೊನಾ
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವೈರಲ್‌ ಅಡ್ಡ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಗ್ಯಾಲರಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ವಿಡಿಯೋ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಟಿವಿ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಕ್ರೀಡೆ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಚುನಾವಣೆ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಧರ್ಮ{" "}
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                    href="#"
-                  >
-                    ಸುದ್ದಿ ಸತ್ಯಾಂಶ{" "}
-                  </a>
-                </div>
+        <hr className="w-full md:w-[700px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1400px] h-px mx-auto bg-white border-0 rounded mt-2" />
+        <div className=" items-center justify-center w-full">
+          <div className={` bg-white w-full}`}>
+            <div className=" text-center my-5">
+              <div className="flex sm:justify-center justify-around items-center h-full">
+                <img
+                  src={Raichur}
+                  alt="img"
+                  className="sm:w-[220px] w-[200px]"
+                />
+                <span className="flex sm:hidden text-base font-bold">
+                  <FaCloudSunRain className="w-6 h-6 mr-2" />
+                  Rainy 24°C
+                </span>
               </div>
             </div>
           </div>
         </div>
+        <div className="  w-full md:hidden justify-end flex">
+          <button
+            className="inline-flex items-center p-2 w-10 h-10 text-gray-500 rounded-lg md:hidden
+           hover:bg-gray-100 "
+            aria-controls="mobile-menu"
+            aria-expanded={mobileMenuOpen}
+            onClick={toggleMobileMenu}
+          >
+            <span className="sr-only">Open main menu</span>
+            <FaBars className="w-5 h-5" />
+          </button>
+        </div>
+        <div
+          id="mobile-menu"
+          className={`absolute left-0 w-full mx-2 rounded-lg   border-gray-200 bg-gray-800   ${
+            mobileMenuOpen ? "block" : "hidden"
+          } md:hidden`}
+          style={{ top: "calc(100% + 0.5rem)", zIndex: 20 }}
+        >
+          <ul className="flex flex-col p-4">
+            {menuItems.map((item, index) => (
+              <li key={index} className="relative">
+                {item.links ? (
+                  <>
+                    <button
+                      className="flex items-center whitespace-nowrap  w-full py-2 px-3 rounded-lg text-white hover:bg-blue-500 "
+                      onClick={() => handleDropdownClick(index)}
+                    >
+                      {item.title}
+                      <div className=" flex justify-end w-full">
+                      <FaChevronDown
+                        className={`w-5 h-5 ml-2 transition-transform  ${
+                          openDropdown === index ? "rotate-180" : ""
+                        }`}
+                      />
+                      </div>
+                    </button>
+                    {openDropdown === index && (
+                      <div
+                        className="absolute right-10 top-full mt-2 w-64  
+                       bg-gray-700 border-gray-200 divide-y divide-gray-100 rounded-lg shadow-lg  z-20"
+                      >
+                        <ul>
+                          {item.links.map((link, linkIndex) => (
+                            <li key={linkIndex}>
+                              <a
+                                href="#"
+                                className="block px-4 py-2 text-white hover:bg-blue-500 "
+                              >
+                                {link}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <a
+                    href="#"
+                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 "
+                  >
+                    {item.title}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div
+          id="desktop-menu"
+          className="hidden md:flex md:items-center md:space-x-8 md:mt-0 md:w-auto md: md:border-0 md:divide-y-0"
+        >
+          <ul className="flex  flex-col md:flex-row md:space-x-4">
+            {menuItems.map((item, index) => (
+              <li key={index} className="relative">
+                {item.links ? (
+                  <>
+                    <button
+                      className="flex items-center py-2 px-3 text-sm text-gray-900 hover:bg-gray-100 "
+                      onClick={() => handleDropdownClick(index)}
+                    >
+                      {item.title}
+                      <FaChevronDown
+                        className={`w-5 h-5 ml-2 transition-transform ${
+                          openDropdown === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {openDropdown === index && (
+                      <div className="absolute left-0 top-full mt-2 w-64   bg-gray-800 text-white divide-y divide-gray-100 rounded-lg shadow-lg  z-20">
+                        <ul>
+                          {item.links.map((link, linkIndex) => (
+                            <li key={linkIndex}>
+                              <a
+                                href="#"
+                                className="block px-4 py-2  hover:bg-blue-500 "
+                              >
+                                {link}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <a
+                    href="#"
+                    className="block py-2 px-3 text-gray-900 rounded hover:bg-blue-500 "
+                  >
+                    {item.title}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black opacity-50 z-10"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+    </nav>
   );
 };
 
-export default Header;
+export default Navbar;

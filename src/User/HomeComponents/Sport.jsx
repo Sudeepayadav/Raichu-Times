@@ -64,7 +64,7 @@ function Sport() {
                 </div>
               </div>
             </div>
-            <div className=" overflow-hidden  mx-auto">
+            <div className=" overflow-hidden  mx-auto md: border-b border-gray-600">
               <div className="md:flex p-4">
                 <img
                   src="https://images.tv9kannada.com/wp-content/uploads/2024/07/malenaduredalert.jpg?w=1280"
@@ -76,7 +76,7 @@ function Sport() {
                     ಚಿಕ್ಕಮಗಳೂರಿನಲ್ಲಿ ಪ್ರವಾಸಿಗರ ಹುಚ್ಚಾಟ: ಮದ್ಯ ಸೇವಿಸಿ
                     ಸಮುದ್ರಕ್ಕಿಳಿದ ಜನ,
                   </a>
-                  <p className="mt-2 md:text-sm text-gray-700 md: border-b border-gray-600 ">
+                  <p className="mt-2 md:text-sm text-gray-700  ">
                     ಇದೀಗ ಎಲ್ಲೆಡೆ ಮಳೆ ಆಗುತ್ತಿದೆ. ಹೀಗಾಗಿ ನಿಸರ್ಗ ದೇವತೆ ಹಸಿರಿನಿಂದ
                     ಕಂಗೊಳಿಸುತ್ತಿದ್ದಾಳೆ. ಪ್ರವಾಸಿಗರು ನಿಸರ್ಗ ಸೌಂದರ್ಯ ಸವಿಯಲು
                     ಬರುತ್ತಿದ್ದಾರೆ.

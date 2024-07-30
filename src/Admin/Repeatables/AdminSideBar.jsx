@@ -21,7 +21,7 @@ const AdminSidebar = () => {
       </div>
       <Link
         to="/admin/"
-        className="flex gap-2 pl-3 items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg  group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
+        className="flex gap-2 pl-3 items-center w-full p-2  transition duration-75 rounded-lg  group hover:bg-gray-500 hover:text-white dark:text-white dark:hover:bg-gray-700"
       >
         <IoHomeOutline />
 
